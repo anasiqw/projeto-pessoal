@@ -10,7 +10,7 @@ let opcao = parseInt(prompt(
   "Escolha uma opção:"
 ));
 
-let qtd, bruto, liquido, salario;
+let qtd = 0, bruto = 0, liquido = 0, salario = 0;
 
 switch(opcao) {
   case 1:
@@ -30,14 +30,15 @@ switch(opcao) {
 
   default:
     alert("Opção inválida!");
-    bruto = 0;
 }
 
-liquido = bruto * 0.8; // desconta 20% despesas
-salario = liquido / 3; // 3 funcionárias
+if (bruto > 0) {
+  liquido = bruto * 0.8; // desconta 20% despesas
+  salario = liquido / 3; // 3 funcionárias
 
-alert(
-  "Faturamento bruto anual: R$ " + bruto + "\n" +
-  "Faturamento líquido anual: R$ " + liquido + "\n" +
-  "Salário de cada funcionária: R$ " + salario
-);
+  alert(
+    "Faturamento bruto anual: R$ " + bruto + "\n" +
+    "Faturamento líquido anual: R$ " + liquido + "\n" +
+    "Salário de cada funcionária: R$ " + salario
+  );
+}
